@@ -22,10 +22,9 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      
+    Future.delayed(Duration(seconds: 5), () {
       FirebaseAuth.instance.currentUser == null
-        ? Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignInview()))
+        ? Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignInview()))
         : NavigationHelper.navigateTo(context, HomeView());
     });
   }
@@ -38,7 +37,7 @@ class _SplashViewState extends State<SplashView> {
           // Background Image
           Positioned.fill(
             child: Image.asset(
-              AppAssets.splashImageBackground,
+              'assets/images/doodle_bg.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -52,7 +51,7 @@ class _SplashViewState extends State<SplashView> {
               ),
               SizedBox(height: 60.h),
               Image.asset(
-                AppAssets.splashImageicon,
+                'assets/images/circle.png',
                 width: 300.w,
                 color: AppColors.green,
               ),

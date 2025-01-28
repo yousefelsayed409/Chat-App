@@ -8,6 +8,7 @@ import 'package:mentorwhatsapp/core/helper/cash_helper.dart';
 import 'package:mentorwhatsapp/features/Auth/SignIn/presentation/SignIn_Cubit/cubit/sign_in_cubit.dart';
 import 'package:mentorwhatsapp/features/Auth/SignUp/presentation/SignUp_Cubit/signup_cubit.dart';
 import 'package:mentorwhatsapp/core/routes/app_route.dart';
+import 'package:mentorwhatsapp/features/splash/view/splash_view.dart';
 import 'package:mentorwhatsapp/firebase_options.dart';
  
 
@@ -54,6 +55,7 @@ class MentorWhatsApp extends StatelessWidget {
           return MaterialApp(
             theme: ThemeData.dark(),
             debugShowCheckedModeBanner: false,
+           
             initialRoute: AppRoute.splashView,
             onGenerateRoute: AppRoute.generateRoute,
           );
